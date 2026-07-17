@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-blue: #0A66C2;
+  --electric-blue: #2563EB;
+  --dark-navy: #0A192F;
+  --navy-light: #112240;
+  --soft-blue: #EBF4FF;
+  --light-blue: #F0F7FF;
+  --white: #FFFFFF;
+  --off-white: #f4f8fc; /* Updated to very light cool blue/gray */
+  
+  --text-dark: #0F172A;
+  --text-muted: #64748B;
+  --text-light: #F8FAFC;
+  
+  --border-color: #E2E8F0;
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-card: rgba(15, 23, 42, 0.08); /* New subtle border for cards */
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-blue: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
+  --shadow-card: 0 8px 25px rgba(15, 23, 42, 0.04); /* Soft shadow for cards */
+  --shadow-card-hover: 0 12px 30px rgba(15, 23, 42, 0.08); /* Stronger shadow on hover */
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-family: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: var(--off-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark-navy);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Base button styles to override bootstrap */
+.btn-primary-blue {
+  background-color: var(--electric-blue) !important;
+  color: var(--white) !important;
+  border: none !important;
+  border-radius: var(--radius-md) !important;
+  transition: var(--transition-smooth) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.btn-primary-blue:hover {
+  background-color: #1D4ED8 !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-blue) !important;
+  color: var(--white) !important;
+}
+
+.btn-outline-blue {
+  background-color: transparent !important;
+  color: var(--electric-blue) !important;
+  border: 2px solid var(--electric-blue) !important;
+  border-radius: var(--radius-md) !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.btn-outline-blue:hover {
+  background-color: var(--soft-blue) !important;
+  transform: translateY(-2px);
+  color: var(--electric-blue) !important;
+}
+
+.text-primary-blue {
+  color: var(--electric-blue) !important;
+}
+
+.text-dark-navy {
+  color: var(--dark-navy) !important;
+}
+
+.bg-dark-navy {
+  background-color: var(--dark-navy) !important;
+}
+
+.bg-navy-light {
+  background-color: var(--navy-light) !important;
+}
+
+.bg-soft-blue {
+  background-color: var(--soft-blue) !important;
+}
+
+.bg-light-blue {
+  background-color: var(--light-blue) !important;
+}
+
+.bg-off-white {
+  background-color: var(--off-white) !important;
+}
+
+.bg-light-cool {
+  background-color: #f4f8fc !important;
+}
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 992px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.premium-card {
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+}
+
+.premium-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius-lg); /* equivalent to rounded-4 */
+  border: 1px solid var(--border-card) !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-card-hover) !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
+}
+
