@@ -1,9 +1,32 @@
+import React, { useEffect, useRef } from 'react'
 import { Container, Row, Col, Card } from 'react-bootstrap'
-import { motion } from 'framer-motion'
+import { motion, useInView, animate } from 'framer-motion'
 import aiImg from '../assets/ai.jpg'
 import digitalBoardImg from '../assets/digtal board.jpg'
 import globalNetworkImg from '../assets/gobal network.jpg'
 import iotImg from '../assets/iot.jpg'
+
+function AnimatedCounter({ from = 0, to, suffix = "", duration = 2.5 }) {
+  const nodeRef = useRef(null)
+  const inView = useInView(nodeRef, { once: true, margin: "-50px" })
+
+  useEffect(() => {
+    if (inView) {
+      const controls = animate(from, to, {
+        duration,
+        ease: "easeOut",
+        onUpdate(value) {
+          if (nodeRef.current) {
+            nodeRef.current.textContent = Math.round(value) + suffix
+          }
+        }
+      })
+      return () => controls.stop()
+    }
+  }, [from, to, inView, suffix, duration])
+
+  return <span ref={nodeRef}>{from}{suffix}</span>
+}
 
 export default function About() {
   return (
@@ -39,15 +62,21 @@ export default function About() {
                 </p>
                 <div className="d-flex gap-4 gap-lg-5 mt-5 justify-content-center justify-content-lg-start">
                   <div>
-                    <h1 className="text-primary-blue fw-bold display-6">50+</h1>
+                    <h1 className="text-primary-blue fw-bold display-6">
+                      <AnimatedCounter to={50} suffix="+" />
+                    </h1>
                     <p className="text-muted fw-medium text-uppercase" style={{ letterSpacing: '1px', fontSize: '13px' }}>Projects</p>
                   </div>
                   <div>
-                    <h1 className="text-primary-blue fw-bold display-6">20+</h1>
+                    <h1 className="text-primary-blue fw-bold display-6">
+                      <AnimatedCounter to={20} suffix="+" />
+                    </h1>
                     <p className="text-muted fw-medium text-uppercase" style={{ letterSpacing: '1px', fontSize: '13px' }}>Experts</p>
                   </div>
                   <div>
-                    <h1 className="text-primary-blue fw-bold display-6">10+</h1>
+                    <h1 className="text-primary-blue fw-bold display-6">
+                      <AnimatedCounter to={10} suffix="+" />
+                    </h1>
                     <p className="text-muted fw-medium text-uppercase" style={{ letterSpacing: '1px', fontSize: '13px' }}>Years</p>
                   </div>
                 </div>
