@@ -54,7 +54,7 @@ export default function Contact() {
                         <option>Select a service...</option>
                         <option>Web Development</option>
                         <option>Mobile Apps</option>
-                        <option>AI & Automation</option>
+                        <option>Digital Marketing</option>
                         <option>Cloud Solutions</option>
                       </Form.Select>
                     </Form.Group>

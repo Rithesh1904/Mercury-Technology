@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
 import webDevImg from '../assets/web development.jpg'
-import mobileSolImg from '../assets/mobile solution.jpg'
-import aiRobotImg from '../assets/ai and robot.jpg'
+import mobileSolImg from '../assets/mobile_solutions_v2.png'
+import digitalMarketingImg from '../assets/digital_marketing_v2.png'
 import iotSystemsImg from '../assets/iot systems.jpg'
 import uiUxImg from '../assets/ui nad ux.jpg'
 import cloudImg from '../assets/cloud.jpg'
@@ -13,7 +13,7 @@ import backVideo from '../assets/Back1.mp4'
 const services = [
   { title: 'Web Development', desc: 'Crafting high-performance, responsive websites that deliver exceptional user experiences.', image: webDevImg },
   { title: 'Mobile Solutions', desc: 'Developing intuitive iOS and Android applications that engage and delight users.', image: mobileSolImg },
-  { title: 'AI & Automation', desc: 'Leveraging artificial intelligence to streamline operations and drive intelligent growth.', image: aiRobotImg },
+  { title: 'Digital Marketing', desc: 'Driving business growth through strategic, data-driven digital marketing campaigns that maximize reach, engagement, and conversions.', image: digitalMarketingImg },
   { title: 'IoT Systems', desc: 'Connecting devices and data to create smart, integrated environments for the future.', image: iotSystemsImg },
   { title: 'UI/UX Design', desc: 'Designing beautiful, user-centric interfaces that blend aesthetics with functionality.', image: uiUxImg },
   { title: 'Cloud Infrastructure', desc: 'Building scalable, secure cloud environments that empower your digital transformation.', image: cloudImg },
@@ -82,12 +82,12 @@ export default function Services() {
                         className="w-100 h-100"
                         style={{ objectFit: 'cover', transition: 'transform 0.6s ease' }}
                       />
-                      <div 
+                      <div
                         className="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
-                        style={{ 
-                          backgroundColor: 'rgba(10, 25, 47, 0.5)', 
-                          opacity: 0, 
-                          transition: 'opacity 0.4s ease' 
+                        style={{
+                          backgroundColor: 'rgba(10, 25, 47, 0.5)',
+                          opacity: 0,
+                          transition: 'opacity 0.4s ease'
                         }}
                       >
                         <button
