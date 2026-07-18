@@ -8,28 +8,32 @@
   --soft-blue: #EBF4FF;
   --light-blue: #F0F7FF;
   --white: #FFFFFF;
-  --off-white: #f4f8fc; /* Updated to very light cool blue/gray */
-  
+  --off-white: #f4f8fc;
+  /* Updated to very light cool blue/gray */
+
   --text-dark: #0F172A;
   --text-muted: #64748B;
   --text-light: #F8FAFC;
-  
+
   --border-color: #E2E8F0;
   --border-light: rgba(255, 255, 255, 0.1);
-  --border-card: rgba(15, 23, 42, 0.08); /* New subtle border for cards */
-  
+  --border-card: rgba(15, 23, 42, 0.08);
+  /* New subtle border for cards */
+
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-blue: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
-  --shadow-card: 0 8px 25px rgba(15, 23, 42, 0.04); /* Soft shadow for cards */
-  --shadow-card-hover: 0 12px 30px rgba(15, 23, 42, 0.08); /* Stronger shadow on hover */
+  --shadow-card: 0 8px 25px rgba(15, 23, 42, 0.04);
+  /* Soft shadow for cards */
+  --shadow-card-hover: 0 12px 30px rgba(15, 23, 42, 0.08);
+  /* Stronger shadow on hover */
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
-  
+
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   font-family: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -46,7 +50,12 @@ body {
   background-color: var(--off-white);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--dark-navy);
   font-weight: 700;
   line-height: 1.2;
@@ -140,23 +149,77 @@ html {
   }
 }
 
-.premium-card {
-  background: var(--off-white);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-card);
-  box-shadow: var(--shadow-card);
-  transition: var(--transition-smooth);
+.card {
+  position: relative;
+  width: 100%;
+  height: 150%;
+  min-height: 250px;
+  border-radius: 14px;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  border: none !important;
+  background-color: transparent !important;
 }
 
-.premium-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-card-hover);
-  border-color: rgba(37, 99, 235, 0.2);
+.bg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  z-index: 2;
+  background: rgba(255, 255, 255, .95);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 2px solid white;
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: #ff0000;
+  opacity: 1;
+  filter: blur(12px);
+  animation: blob-bounce 5s infinite ease;
+}
+
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
 }
 
 .service-card {
   background: var(--white);
-  border-radius: var(--radius-lg); /* equivalent to rounded-4 */
+  border-radius: var(--radius-lg);
+  /* equivalent to rounded-4 */
   border: 1px solid var(--border-card) !important;
   box-shadow: var(--shadow-card) !important;
   transition: var(--transition-smooth);
@@ -167,4 +230,3 @@ html {
   box-shadow: var(--shadow-card-hover) !important;
   border-color: rgba(37, 99, 235, 0.2) !important;
 }
-
