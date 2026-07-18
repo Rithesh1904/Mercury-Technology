@@ -188,7 +188,7 @@ html {
   width: 50%;
   height: 50%;
   border-radius: 50%;
-  background-color: #ff0000;
+  background-color: var(--electric-blue);
   opacity: 1;
   filter: blur(12px);
   animation: blob-bounce 5s infinite ease;
