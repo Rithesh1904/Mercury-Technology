@@ -8,6 +8,7 @@ import aiRobotImg from '../assets/ai and robot.jpg'
 import iotSystemsImg from '../assets/iot systems.jpg'
 import uiUxImg from '../assets/ui nad ux.jpg'
 import cloudImg from '../assets/cloud.jpg'
+import backVideo from '../assets/Back1.mp4'
 
 const services = [
   { title: 'Web Development', desc: 'Crafting high-performance, responsive websites that deliver exceptional user experiences.', image: webDevImg },
@@ -22,9 +23,20 @@ export default function Services() {
   const navigate = useNavigate()
 
   return (
-    <div id="services">
-      {/* Updated background to use the light cool tone */}
-      <div className="section-padding bg-light-cool">
+    <div id="services" className="position-relative">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="position-absolute top-0 start-0 w-100 h-100"
+        style={{ objectFit: 'cover', zIndex: 0 }}
+      >
+        <source src={backVideo} type="video/mp4" />
+      </video>
+      <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark" style={{ opacity: 0.8, zIndex: 1 }}></div>
+
+      <div className="section-padding position-relative" style={{ zIndex: 2 }}>
         <Container>
           <motion.div
             className="text-center mb-5 pb-3"
@@ -33,9 +45,9 @@ export default function Services() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            <h2 className="fw-bold display-5 text-dark-navy">Our <span className="text-primary-blue">Services</span></h2>
+            <h2 className="fw-bold display-5 text-white">Our <span className="text-primary-blue">Services</span></h2>
             <div className="mx-auto mt-3 rounded mb-4" style={{ width: '60px', height: '4px', backgroundColor: 'var(--electric-blue)' }}></div>
-            <p className="mt-3 fs-5 mx-auto" style={{ maxWidth: '700px', color: 'var(--text-muted)' }}>We offer comprehensive technology solutions tailored to your business needs, driven by innovation and excellence.</p>
+            <p className="mt-3 fs-5 mx-auto text-white" style={{ maxWidth: '700px', opacity: 0.9 }}>We offer comprehensive technology solutions tailored to your business needs, driven by innovation and excellence.</p>
           </motion.div>
 
           <Row className="g-4">

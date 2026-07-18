@@ -4,6 +4,7 @@ import intelligenceOverviewImg from '../assets/interlligence overview.jpg'
 import fleetOverviewImg from '../assets/fleet overview.jpg'
 import vehicleDiagnosticsImg from '../assets/VEHICLE DIAGNOSTICS.jpg'
 import smartAgricultureImg from '../assets/SMART AGRICULTURE.jpg'
+import backVideo2 from '../assets/back2.mp4'
 
 const solutions = [
   {
@@ -100,8 +101,20 @@ function SolutionCard({ s, i }) {
 
 export default function Solutions() {
   return (
-    <div id="solutions">
-      <div className="section-padding bg-white">
+    <div id="solutions" className="position-relative">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="position-absolute top-0 start-0 w-100 h-100"
+        style={{ objectFit: 'cover', zIndex: 0 }}
+      >
+        <source src={backVideo2} type="video/mp4" />
+      </video>
+      <div className="position-absolute top-0 start-0 w-100 h-100 bg-white" style={{ opacity: 0.85, zIndex: 1 }}></div>
+
+      <div className="section-padding position-relative" style={{ zIndex: 2 }}>
         <Container>
           <motion.div
             className="text-center mb-5 pb-4"
