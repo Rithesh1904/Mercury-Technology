@@ -89,7 +89,7 @@ export default function Contact() {
                   <div className="position-relative z-index-1">
                     <div className="mb-5">
                       <h4 className="fw-bold mb-4 text-white">Contact Information</h4>
-                      <p className="text-muted mb-4" style={{ lineHeight: 1.6 }}>Fill out the form and our team will get back to you within 24 hours.</p>
+                      <p className="text-white opacity-75 mb-4" style={{ lineHeight: 1.6 }}>Fill out the form and our team will get back to you within 24 hours.</p>
                       
                       <div className="d-flex align-items-center gap-3 mb-4">
                         <div className="bg-primary-blue rounded-circle p-2 d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
@@ -98,8 +98,8 @@ export default function Contact() {
                           </svg>
                         </div>
                         <div>
-                          <p className="mb-0 small text-uppercase text-muted fw-semibold" style={{ letterSpacing: '1px' }}>Email</p>
-                          <p className="mb-0 fw-medium">info@mercurytech.in</p>
+                          <p className="mb-0 small text-uppercase text-white opacity-75 fw-semibold" style={{ letterSpacing: '1px' }}>Email</p>
+                          <p className="mb-0 fw-medium text-white">info@mercurytech.in</p>
                         </div>
                       </div>
                       
@@ -110,8 +110,8 @@ export default function Contact() {
                           </svg>
                         </div>
                         <div>
-                          <p className="mb-0 small text-uppercase text-muted fw-semibold" style={{ letterSpacing: '1px' }}>Location</p>
-                          <p className="mb-0 fw-medium">Coimbatore, Tamil Nadu</p>
+                          <p className="mb-0 small text-uppercase text-white opacity-75 fw-semibold" style={{ letterSpacing: '1px' }}>Location</p>
+                          <p className="mb-0 fw-medium text-white">Coimbatore, Tamil Nadu</p>
                         </div>
                       </div>
                     </div>
