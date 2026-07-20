@@ -99,7 +99,7 @@ export default function Footer() {
         <Container>
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
             <div className="text-white mb-3 mb-md-0" style={{ fontSize: 14, opacity: 0.7 }}>
-              &copy; 2026 MERCURY TECHNOLOGY. All rights reserved.
+              &copy; 2025 MERCURY TECHNOLOGY. All rights reserved.
             </div>
             <div className="text-white" style={{ fontSize: 13, opacity: 0.5, letterSpacing: '0.5px' }}>
               Designed for the Future

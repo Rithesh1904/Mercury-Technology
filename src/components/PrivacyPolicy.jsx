@@ -1,169 +1,294 @@
-import { useEffect } from 'react'
-import { Container, Row, Col, Card } from 'react-bootstrap'
+import { useEffect, useState } from 'react'
+import { Container, Row, Col, Nav } from 'react-bootstrap'
 import { motion } from 'framer-motion'
 
 const policySections = [
   {
+    id: 'introduction',
     title: 'Introduction',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-    ),
-    content: 'Welcome to Mercury Technology. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.'
+    content: (
+      <>
+        <p>Mercury Technology ("we," "us," "our," or "Company") operates this website and provides technology-related services to businesses and individuals.</p>
+        <p>This Privacy Policy explains how we collect, use, protect, and disclose information when you visit our website, contact us, or use our services.</p>
+        <p>We are committed to protecting the privacy and security of the personal information shared with us.</p>
+      </>
+    )
   },
   {
+    id: 'information-we-collect',
     title: 'Information We Collect',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-    ),
-    content: 'We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows: Identity Data (first name, last name), Contact Data (email address, telephone numbers), and Technical Data (internet protocol (IP) address, browser type and version).'
+    content: (
+      <>
+        <p>We may collect the following types of information when you interact with our website or services.</p>
+        <h6 className="mt-4 mb-2 fw-bold text-dark">A. Personal Information</h6>
+        <p>Depending on how you interact with us, we may collect: Full Name, Email Address, Mobile or Phone Number, Company or Organization Name, Job Title or Role (where voluntarily provided), Information submitted through our contact or enquiry forms, and Any other information you voluntarily provide to us.</p>
+        <h6 className="mt-4 mb-2 fw-bold text-dark">B. Enquiry and Communication Information</h6>
+        <p>When you contact us regarding our services, we may collect: Your enquiry or project requirements, Service interests, Business requirements, Communication history, and Information provided during consultations or discussions.</p>
+        <h6 className="mt-4 mb-2 fw-bold text-dark">C. Technical Information</h6>
+        <p>When you visit our website, certain technical information may be collected automatically, including: IP Address, Browser Type and Version, Device Type, Operating System, Date and Time of Visit, Pages Viewed, Website Usage Logs, and Referring Website or Source.</p>
+        <h6 className="mt-4 mb-2 fw-bold text-dark">D. Website Usage Information</h6>
+        <p>We may collect information regarding your interaction with our website, including: Pages visited, Services viewed, Website navigation activity, Interaction with website features, Form submission activity, and General browsing behavior.</p>
+      </>
+    )
   },
   {
+    id: 'how-we-use',
     title: 'How We Use Your Information',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-    ),
-    content: 'We will only use your personal data when the law allows us to. Most commonly, we will use your personal data to provide our IT solutions and services to you, to manage our relationship with you, and to improve our website, products/services, marketing, or customer relationships.'
+    content: (
+      <>
+        <p>The information collected may be used to:</p>
+        <ul className="ps-4 mb-4">
+          <li>Respond to enquiries and contact requests.</li>
+          <li>Understand your business and technology requirements.</li>
+          <li>Provide information about our products and services.</li>
+          <li>Communicate with you regarding our services.</li>
+          <li>Schedule consultations or discussions.</li>
+          <li>Provide quotations, proposals, and service-related information.</li>
+          <li>Improve our website, services, functionality, and user experience.</li>
+          <li>Maintain the security and functionality of our website.</li>
+          <li>Detect, prevent, and investigate unauthorized or fraudulent activities.</li>
+          <li>Comply with applicable legal and regulatory requirements.</li>
+          <li>Send service-related communications.</li>
+          <li>Send promotional or marketing communications where permitted by applicable law and, where required, with your consent.</li>
+        </ul>
+      </>
+    )
   },
   {
-    title: 'Information Sharing',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
-    ),
-    content: 'We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential.'
+    id: 'third-party',
+    title: 'Third-Party Disclosure',
+    content: (
+      <>
+        <p>Mercury Technology does not sell, rent, or trade your personal information.</p>
+        <p>Your information may be shared only when reasonably necessary with trusted third parties such as: Website hosting and cloud service providers, Email and communication service providers, Website analytics and performance service providers, IT, security, and technical support providers, Professional advisors where necessary, and Government authorities or regulatory bodies where disclosure is required by applicable law.</p>
+        <p>All third-party service providers are expected to maintain appropriate confidentiality and security standards.</p>
+      </>
+    )
   },
   {
-    title: 'Cookies',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 12.5v.01"></path><path d="M12 16v.01"></path><path d="M11 11v.01"></path><path d="M7 14.5v.01"></path></svg>
-    ),
-    content: 'Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site. You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies.'
+    id: 'protection',
+    title: 'Information Protection',
+    content: (
+      <>
+        <p>We implement reasonable administrative, technical, and organizational measures to protect your personal information against: Unauthorized access, Unauthorized disclosure, Alteration, Misuse, Loss or destruction.</p>
+        <p>Our security measures may include: HTTPS/SSL encrypted communication, Access controls, Secure hosting infrastructure, Regular system monitoring, Security updates and maintenance, and Reasonable safeguards against unauthorized access.</p>
+        <p>However, no method of transmission over the internet or method of electronic storage is completely secure. Therefore, we cannot guarantee absolute security of your information.</p>
+      </>
+    )
   },
   {
-    title: 'Data Security',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-    ),
-    content: 'We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know.'
+    id: 'rights',
+    title: 'Rights of Users',
+    content: (
+      <>
+        <p>Subject to applicable laws of India, you may have the right to:</p>
+        <ul className="ps-4 mb-4">
+          <li>Request access to personal information held about you.</li>
+          <li>Request correction or updating of inaccurate information.</li>
+          <li>Request deletion of personal information where permitted by law.</li>
+          <li>Withdraw consent for receiving promotional communications.</li>
+          <li>Raise concerns regarding the processing of your personal information.</li>
+          <li>Contact us regarding privacy-related concerns or grievances.</li>
+        </ul>
+        <p>We will respond to valid requests within a reasonable period in accordance with applicable law.</p>
+      </>
+    )
   },
   {
-    title: 'Third-Party Services',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-    ),
-    content: 'Our website may include links to third-party websites, plug-ins and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements.'
+    id: 'cookies',
+    title: 'Cookies Policy',
+    content: (
+      <>
+        <p>Mercury Technology may use cookies and similar technologies to improve website functionality and user experience.</p>
+        <p>Cookies may be used to: Maintain website functionality, Remember user preferences, Improve website performance, Analyze website traffic and usage, Understand how visitors interact with our website, and Improve the overall user experience.</p>
+        <p>You may disable cookies through your browser settings. However, disabling cookies may affect certain features or functionality of the website.</p>
+      </>
+    )
   },
   {
-    title: 'Your Rights',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-    ),
-    content: 'Under certain circumstances, you have rights under data protection laws in relation to your personal data. These include the right to request access to your personal data, request correction of your personal data, request erasure of your personal data, and object to processing of your personal data.'
+    id: 'retention',
+    title: 'Data Retention',
+    content: (
+      <>
+        <p>We retain personal information only for as long as reasonably necessary to: Respond to enquiries, Provide requested services, Maintain business and communication records, Improve our services and website, Comply with applicable legal, tax, accounting, and regulatory obligations, and Resolve disputes and enforce legal agreements.</p>
+        <p>After the applicable retention period, information may be securely deleted, anonymized, or otherwise handled in accordance with applicable laws.</p>
+      </>
+    )
   },
   {
-    title: 'Changes to This Policy',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
-    ),
-    content: 'We keep our privacy policy under regular review. This version was last updated in July 2026. It is important that the personal data we hold about you is accurate and current. Please keep us informed if your personal data changes during your relationship with us.'
+    id: 'children',
+    title: "Children's Privacy",
+    content: (
+      <>
+        <p>Our website and services are not intentionally directed toward children under the age of 18.</p>
+        <p>We do not knowingly collect personal information from children. If we become aware that personal information belonging to a child has been collected without appropriate consent, we will take reasonable steps to delete such information.</p>
+      </>
+    )
   },
   {
-    title: 'Contact Us',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-    ),
-    content: 'If you have any questions about this privacy policy or our privacy practices, please contact us at info@mercurytech.in or write to us at our registered office in Coimbatore, Tamil Nadu.'
+    id: 'external-links',
+    title: 'External Links',
+    content: (
+      <>
+        <p>Our website may contain links to third-party websites, platforms, or services.</p>
+        <p>We are not responsible for the privacy practices, content, security, or policies of third-party websites. We recommend reviewing the privacy policies of any external websites you visit.</p>
+      </>
+    )
+  },
+  {
+    id: 'changes',
+    title: 'Changes to This Privacy Policy',
+    content: (
+      <>
+        <p>Mercury Technology reserves the right to modify or update this Privacy Policy at any time.</p>
+        <p>Any changes will be posted on this page together with the updated Effective Date.</p>
+        <p>Your continued use of the website after changes are posted may constitute acceptance of the revised Privacy Policy.</p>
+      </>
+    )
   }
 ];
 
 export default function PrivacyPolicy() {
+  const [activeSection, setActiveSection] = useState('introduction');
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const handleScroll = () => {
+      const sections = policySections.map(s => document.getElementById(s.id));
+      const scrollPosition = window.scrollY + 150; // Offset for sticky header
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(section.id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return (
-    <div style={{ backgroundColor: 'var(--dark-navy)', backgroundImage: 'radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.08), transparent 25%), radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.08), transparent 25%)', minHeight: '100vh', paddingBottom: '100px', position: 'relative', overflow: 'hidden' }}>
-      
-      {/* Animated Background Orbs */}
-      <div style={{ position: 'absolute', top: '-10%', left: '-5%', width: '400px', height: '400px', background: 'rgba(37, 99, 235, 0.15)', borderRadius: '50%', filter: 'blur(120px)', zIndex: 0 }} />
-      <div style={{ position: 'absolute', bottom: '10%', right: '-10%', width: '500px', height: '500px', background: 'rgba(56, 189, 248, 0.1)', borderRadius: '50%', filter: 'blur(150px)', zIndex: 0 }} />
+  const scrollToSection = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 100, // Offset to not overlap with top
+        behavior: 'smooth'
+      });
+    }
+  };
 
-      {/* Hero Section */}
-      <div className="position-relative pt-5 pb-5" style={{ zIndex: 1, marginTop: '80px' }}>
-        <Container className="text-center pt-5 pb-4">
+  return (
+    <div className="bg-off-white" style={{ minHeight: '100vh', paddingBottom: '100px' }}>
+      
+      {/* Hero Header */}
+      <div className="py-5 mb-5" style={{ backgroundColor: 'var(--dark-navy)', paddingTop: '160px !important', paddingBottom: '80px !important' }}>
+        <Container>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mt-5"
           >
-            <div className="d-inline-block px-4 py-2 rounded-pill mb-4" style={{ backgroundColor: 'rgba(37, 99, 235, 0.15)', border: '1px solid rgba(37, 99, 235, 0.3)' }}>
-              <span className="text-primary-blue fw-bold" style={{ letterSpacing: '1px', textTransform: 'uppercase', fontSize: '13px' }}>
-                Last Updated: July 2026
-              </span>
+            <div className="d-inline-block px-3 py-1 rounded-pill mb-3" style={{ backgroundColor: 'rgba(37, 99, 235, 0.15)', border: '1px solid rgba(37, 99, 235, 0.3)', color: 'var(--light-blue)', fontSize: '0.85rem', fontWeight: '600', letterSpacing: '0.5px' }}>
+              LEGAL DOCUMENT
             </div>
-            
-            <h1 className="fw-bolder display-3 mb-4" style={{ background: 'linear-gradient(to right, #ffffff, var(--light-blue))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '-1px' }}>
+            <h1 className="fw-bold mb-3 text-white" style={{ fontSize: '3rem', letterSpacing: '-1px' }}>
               Privacy Policy
             </h1>
-            
-            <p className="mx-auto" style={{ color: 'rgba(255, 255, 255, 0.7)', maxWidth: '750px', fontSize: '19px', lineHeight: 1.8, fontWeight: '300' }}>
-              At Mercury Technology, we are committed to protecting your privacy and ensuring your data is handled securely and transparently. Read on to learn more about how we collect, use, and safeguard your information.
+            <p className="mx-auto" style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.15rem', maxWidth: '600px' }}>
+              Effective Date: July 20, 2025
             </p>
           </motion.div>
         </Container>
       </div>
 
-      {/* Content Section */}
-      <Container className="position-relative" style={{ zIndex: 1 }}>
-        <Row className="justify-content-center">
+      {/* Main Two-Column Layout */}
+      <Container>
+        <Row className="gx-lg-5">
+          {/* Sidebar Navigation */}
+          <Col lg={3} className="d-none d-lg-block">
+            <div className="sticky-top" style={{ top: '120px', zIndex: 10 }}>
+              <h6 className="text-uppercase text-muted fw-bold mb-4" style={{ fontSize: '0.85rem', letterSpacing: '1px' }}>
+                Table of Contents
+              </h6>
+              <Nav className="flex-column policy-nav">
+                {policySections.map((section, index) => (
+                  <Nav.Link 
+                    key={index} 
+                    href={`#${section.id}`}
+                    onClick={(e) => scrollToSection(e, section.id)}
+                    className={`policy-nav-link ${activeSection === section.id ? 'active' : ''}`}
+                  >
+                    {index === 0 ? '' : `${index}. `}{section.title}
+                  </Nav.Link>
+                ))}
+              </Nav>
+            </div>
+          </Col>
+
+          {/* Document Content */}
           <Col lg={9}>
-            {policySections.map((section, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ scale: 1.015, translateY: -5 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4 }}
-                className="mb-4"
-              >
-                <Card 
-                  className="border-0 rounded-4 p-4 p-md-5 text-white h-100" 
-                  style={{ 
-                    backgroundColor: 'rgba(255, 255, 255, 0.03)', 
-                    backdropFilter: 'blur(16px)',
-                    WebkitBackdropFilter: 'blur(16px)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
-                  }}
-                >
-                  <div className="d-flex align-items-start gap-4">
-                    <div 
-                      className="d-flex align-items-center justify-content-center flex-shrink-0" 
-                      style={{ 
-                        width: '54px', 
-                        height: '54px', 
-                        background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.2) 0%, rgba(37, 99, 235, 0.05) 100%)', 
-                        color: 'var(--light-blue)',
-                        borderRadius: '14px',
-                        border: '1px solid rgba(37, 99, 235, 0.3)',
-                        boxShadow: '0 0 15px rgba(37, 99, 235, 0.2)'
-                      }}
-                    >
-                      {section.icon}
-                    </div>
-                    <div>
-                      <h3 className="fw-bold mb-3" style={{ fontSize: '24px', letterSpacing: '-0.5px' }}>{section.title}</h3>
-                      <p className="mb-0" style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '17px', lineHeight: 1.8, fontWeight: '300' }}>
-                        {section.content}
-                      </p>
-                    </div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-4 p-4 p-md-5"
+              style={{
+                boxShadow: '0 10px 30px rgba(15, 23, 42, 0.04)',
+                border: '1px solid var(--border-color)'
+              }}
+            >
+              {policySections.map((section, index) => (
+                <div key={index} id={section.id} className="policy-section mb-5">
+                  <h3 className="fw-bold text-dark mb-4 pb-3 border-bottom" style={{ fontSize: '1.75rem', borderColor: '#f1f5f9 !important' }}>
+                    {index === 0 ? '' : `${index}. `}{section.title}
+                  </h3>
+                  <div className="policy-content" style={{ fontSize: '1.05rem', lineHeight: '1.8', color: 'var(--text-muted)' }}>
+                    {section.content}
                   </div>
-                </Card>
-              </motion.div>
-            ))}
+                </div>
+              ))}
+            </motion.div>
           </Col>
         </Row>
       </Container>
+      
+      <style>{`
+        .policy-nav-link {
+          color: var(--text-muted);
+          padding: 0.5rem 0;
+          font-size: 0.95rem;
+          transition: all 0.2s ease;
+          border-left: 2px solid transparent;
+          padding-left: 1rem;
+          margin-bottom: 0.25rem;
+        }
+        .policy-nav-link:hover {
+          color: var(--electric-blue);
+          border-left-color: rgba(37, 99, 235, 0.3);
+        }
+        .policy-nav-link.active {
+          color: var(--electric-blue);
+          font-weight: 600;
+          border-left-color: var(--electric-blue);
+          background: linear-gradient(90deg, var(--light-blue) 0%, transparent 100%);
+          border-radius: 0 4px 4px 0;
+        }
+        .policy-content p {
+          margin-bottom: 1.25rem;
+        }
+        .policy-content li {
+          margin-bottom: 0.5rem;
+        }
+        .policy-section:last-child {
+          margin-bottom: 0 !important;
+        }
+      `}</style>
     </div>
   );
 }

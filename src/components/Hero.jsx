@@ -60,18 +60,17 @@ export default function Hero() {
 
       {/* Stamp overlay to cover the logo completely */}
       <div 
-        className="mobile-hide-stamp"
+        className="d-none d-md-flex"
         style={{
           position: 'absolute',
           bottom: '35px',
           right: '85px',
           width: '130px',
           height: '130px',
-          zIndex: 10,
+          zIndex: 1,
           background: 'rgba(2, 6, 23, 0.98)',
           backdropFilter: 'blur(12px)',
           borderRadius: '50%',
-          display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           boxShadow: '0 8px 24px rgba(0, 0, 0, 0.9)',
