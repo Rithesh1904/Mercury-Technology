@@ -31,7 +31,7 @@ function AnimatedCounter({ from = 0, to, suffix = "", duration = 2.5 }) {
 export default function About() {
   return (
     <div id="about">
-      <div className="bg-white text-dark section-padding overflow-hidden">
+      <div className="about-section-bg text-dark section-padding overflow-hidden">
         <Container>
           <motion.div
             className="text-center mb-5"
@@ -40,7 +40,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <h2 className="fw-bold display-5 text-dark-navy">About</h2>
+            <h2 className="fw-bold display-5 text-dark-navy">About <span className="text-primary-blue">Us</span></h2>
             <div className="mx-auto mt-3 rounded" style={{ width: '60px', height: '4px', backgroundColor: 'var(--electric-blue)' }}></div>
           </motion.div>
 
