@@ -5,6 +5,7 @@ import aiImg from '../assets/ai.jpg'
 import digitalBoardImg from '../assets/digtal board.jpg'
 import globalNetworkImg from '../assets/gobal network.jpg'
 import iotImg from '../assets/iot.jpg'
+import MotionCard from './MotionCard'
 
 function AnimatedCounter({ from = 0, to, suffix = "", duration = 2.5 }) {
   const nodeRef = useRef(null)
@@ -89,20 +90,40 @@ export default function About() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <Row className="g-3">
-                  <Col xs={6}>
-                    <img src={aiImg} alt="AI" className="img-fluid rounded-4 shadow-md" style={{ height: 220, width: '100%', objectFit: 'cover' }} />
-                  </Col>
-                  <Col xs={6} className="pt-4 pt-md-5">
-                    <img src={globalNetworkImg} alt="Global Network" className="img-fluid rounded-4 shadow-md" style={{ height: 220, width: '100%', objectFit: 'cover' }} />
-                  </Col>
-                  <Col xs={6}>
-                    <img src={digitalBoardImg} alt="Digital Board" className="img-fluid rounded-4 shadow-md" style={{ height: 220, width: '100%', objectFit: 'cover' }} />
-                  </Col>
-                  <Col xs={6} className="pt-4 pt-md-5">
-                    <img src={iotImg} alt="IoT" className="img-fluid rounded-4 shadow-md" style={{ height: 220, width: '100%', objectFit: 'cover' }} />
-                  </Col>
-                </Row>
+                <div className="position-relative w-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0" style={{ height: '500px' }}>
+                  
+                  {/* Card 1 */}
+                  <div className="position-absolute" style={{ width: '55%', maxWidth: '280px', height: '340px', left: '-5%', top: '15%', transform: 'rotate(-12deg)', zIndex: 1 }}>
+                    <MotionCard>
+                      <img src={aiImg} alt="AI" className="w-100 h-100 shadow" style={{ objectFit: 'cover', borderRadius: '1rem' }} />
+                      <div className="position-absolute shadow-sm" style={{ top: '20%', right: '-15%', background: '#ffc1cc', color: '#000', padding: '8px 20px', borderRadius: '24px', fontSize: '0.85rem', fontWeight: '600', transform: 'rotate(6deg)', whiteSpace: 'nowrap' }}>intelligent by design</div>
+                    </MotionCard>
+                  </div>
+                  
+                  {/* Card 2 */}
+                  <div className="position-absolute" style={{ width: '55%', maxWidth: '280px', height: '340px', left: '15%', top: '25%', transform: 'rotate(-4deg)', zIndex: 2 }}>
+                    <MotionCard>
+                      <img src={digitalBoardImg} alt="Digital Board" className="w-100 h-100 shadow" style={{ objectFit: 'cover', borderRadius: '1rem' }} />
+                      <div className="position-absolute shadow-sm" style={{ bottom: '15%', left: '-5%', background: '#ffdfba', color: '#000', padding: '8px 20px', borderRadius: '24px', fontSize: '0.85rem', fontWeight: '600', transform: 'rotate(-4deg)', whiteSpace: 'nowrap' }}>scalable solutions</div>
+                    </MotionCard>
+                  </div>
+
+                  {/* Card 3 */}
+                  <div className="position-absolute" style={{ width: '55%', maxWidth: '280px', height: '340px', left: '35%', top: '10%', transform: 'rotate(2deg)', zIndex: 3 }}>
+                    <MotionCard>
+                      <img src={globalNetworkImg} alt="Global Network" className="w-100 h-100 shadow" style={{ objectFit: 'cover', borderRadius: '1rem' }} />
+                    </MotionCard>
+                  </div>
+
+                  {/* Card 4 */}
+                  <div className="position-absolute" style={{ width: '55%', maxWidth: '280px', height: '340px', left: '55%', top: '20%', transform: 'rotate(10deg)', zIndex: 4 }}>
+                    <MotionCard>
+                      <img src={iotImg} alt="IoT" className="w-100 h-100 shadow" style={{ objectFit: 'cover', borderRadius: '1rem' }} />
+                      <div className="position-absolute shadow-sm" style={{ top: '35%', left: '-15%', background: '#c8e6c9', color: '#000', padding: '8px 20px', borderRadius: '24px', fontSize: '0.85rem', fontWeight: '600', transform: 'rotate(-6deg)', whiteSpace: 'nowrap' }}>future ready</div>
+                    </MotionCard>
+                  </div>
+                  
+                </div>
               </motion.div>
             </Col>
           </Row>
