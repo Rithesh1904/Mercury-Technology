@@ -34,9 +34,7 @@ export default function Footer() {
           <Row className="gy-5 justify-content-between align-items-start">
             <Col lg={4} className="text-center text-lg-start">
               <div className="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 mb-4">
-                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(135deg, var(--light-blue), var(--primary-blue))', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 15px rgba(10, 102, 194, 0.3)' }}>
-                  <span className="fw-bold text-white fs-5">M</span>
-                </div>
+                <img src="/favicon.png" alt="Mercury Tech Logo" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
                 <h1 className="fw-bold text-white mb-0" style={{ fontSize: 22, letterSpacing: 1 }}>
                   MERCURY <span className="text-primary-blue">TECH</span>
                 </h1>
